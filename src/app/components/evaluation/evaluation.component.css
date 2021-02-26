@@ -95,3 +95,14 @@
 .mat-form-field {
   margin-top: 16px;
 }
+
+.estimate {
+  font-size: 55px;
+  line-height: 75px;
+  font-weight: 700;
+}
+
+.estimate > .span {
+  font-size: 15px;
+  line-height: 22.5px;
+}

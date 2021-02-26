@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {DashboardService} from "../../services/DashboardService";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Location} from '@angular/common';
+import {EvaluationService} from "../../services/EvaluationService";
+import {first} from "rxjs/operators";
+import {PolicyService} from "../../services/PolicyService";
 
 @Component({
   templateUrl: './evaluation.component.html',
@@ -9,31 +11,50 @@ import {Location} from '@angular/common';
 })
 export class EvaluationComponent implements OnInit {
 
-  public firstFormGroup: FormGroup;
-  public secondFormGroup: FormGroup;
-  private dashboardService: DashboardService;
-  public modulesAvailables: any[] = [];
+  public personalFormGroup: FormGroup;
+  public generalFormGroup: FormGroup;
+  private evaluationService: EvaluationService;
+  private policyService: PolicyService;
   public selectedModule: any = undefined;
-  formBuilder: FormBuilder
+  public formBuilder: FormBuilder
+  public evaluation: any;
 
-  constructor(private location: Location, dashboardService: DashboardService, formBuilder: FormBuilder) {
-    this.dashboardService = dashboardService;
+  constructor(private location: Location, evaluationService: EvaluationService, formBuilder: FormBuilder, policyService: PolicyService) {
+    this.evaluationService = evaluationService;
+    this.policyService = policyService;
+
     this.formBuilder = formBuilder;
-    this.firstFormGroup = this.formBuilder.group({
-      name: ['', Validators.required]
+    this.personalFormGroup = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', Validators.required]
     });
-    this.secondFormGroup = this.formBuilder.group({
+    this.generalFormGroup = this.formBuilder.group({
       date: ['', Validators.required]
     });
   }
 
   ngOnInit() {
     this.selectedModule = this.location.getState();
-    this.dashboardService.getModulesAvailables().subscribe(modulesAvailables => this.modulesAvailables = modulesAvailables, err => console.log(err));
   }
 
   select(selectedModule: any) {
     this.selectedModule = selectedModule
   }
 
+  verify() {
+    const personalForm = this.personalFormGroup.value;
+    const generalForm = this.generalFormGroup.value;
+    console.log(personalForm);
+    console.log(generalForm);
+    this.evaluationService.calculate().pipe(first()).subscribe(evaluation => {
+      this.evaluation = evaluation;
+    });
+  }
+
+  buy() {
+    const personalForm = this.personalFormGroup.value;
+    this.policyService.buy(personalForm.name, personalForm.email).pipe(first()).subscribe(evaluation => {
+      this.evaluation = evaluation;
+    });
+  }
 }

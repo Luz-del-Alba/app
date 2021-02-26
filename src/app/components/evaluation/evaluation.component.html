@@ -16,20 +16,26 @@
       </li>
       <div style="align-items: center;margin-top: 30px; margin-right: 30px;">
         <mat-vertical-stepper [linear]="true" #stepper>
-          <mat-step [stepControl]="firstFormGroup">
-            <form [formGroup]="firstFormGroup">
+          <mat-step [stepControl]="personalFormGroup">
+            <form [formGroup]="personalFormGroup">
               <ng-template matStepLabel>Fill out your name</ng-template>
               <mat-form-field>
                 <mat-label>Name</mat-label>
                 <input matInput placeholder="Last name, First name" formControlName="name" required>
+              </mat-form-field>
+              &nbsp; &nbsp;  &nbsp; &nbsp;
+              <ng-template matStepLabel>Fill out your email</ng-template>
+              <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="example@example.com" formControlName="email" required>
               </mat-form-field>
               <div>
                 <button mat-button matStepperNext>Next</button>
               </div>
             </form>
           </mat-step>
-          <mat-step [stepControl]="secondFormGroup">
-            <form [formGroup]="secondFormGroup">
+          <mat-step [stepControl]="generalFormGroup">
+            <form [formGroup]="generalFormGroup">
               <ng-template matStepLabel>Please provide the date</ng-template>
               <mat-form-field>
                 <mat-label>Date</mat-label>
@@ -38,16 +44,31 @@
               </mat-form-field>
               <div>
                 <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-button matStepperNext (click)="verify()">Estimate</button>
               </div>
             </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Accept your coverage details.</ng-template>
+            <br>
+            <p>Here's your estimated price.</p>
+            <br>
+            <div class="estimate">${{evaluation?.estimation}}
+              <span>/{{evaluation?.period}}</span>
+            </div>
+
+            <br>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="buy()">Buy</button>
+            </div>
           </mat-step>
           <mat-step>
             <ng-template matStepLabel>Done</ng-template>
             <p>You are now done.</p>
             <div>
               <button mat-button matStepperPrevious>Back</button>
-              <button mat-button (click)="stepper.reset()">Reset</button>
+              <button mat-button [routerLink]="['/dashboard']" >Reset</button>
             </div>
           </mat-step>
         </mat-vertical-stepper>
