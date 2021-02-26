@@ -1,86 +1,33 @@
 <div class="content" role="main">
   <mat-toolbar class="header">
     <mat-toolbar-row>
-      <span><img class="logo" src="./assets/logo.png"></span>
+      <span><img class="logo" src="./assets/logo.png" alt="logo"></span>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="header-option" [matMenuTriggerFor]="menu" aria-label="icon-button">
-        <mat-icon>expand_more</mat-icon>
+      <button mat-flat-button color="basic">
+        <mat-icon>login</mat-icon>
+        &nbsp; Login
       </button>
-
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>dialpad</mat-icon>
-          <span>Redial</span>
-        </button>
-        <button mat-menu-item disabled>
-          <mat-icon>voicemail</mat-icon>
-          <span>Check voice mail</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>notifications_off</mat-icon>
-          <span>Disable alerts</span>
-        </button>
-      </mat-menu>
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+  <br>
+  <mat-toolbar color="accent" style="background-color: #1c2135;">
+    &nbsp; Get a Quote
+    <span class="example-spacer"></span>
+    <button mat-flat-button color="basic">
+      <mat-icon>mode_edit</mat-icon>
+    </button>
+    &nbsp; &nbsp;
+  </mat-toolbar>
+  <br><br>
+  <mat-list>
+    <mat-list-item>Item 1</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Item 2</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Item 3</mat-list-item>
+  </mat-list>
 
-  <!-- Next Steps -->
-  <h2>Next Steps</h2>
-  <p>What do you want to do next with your app?</p>
-
-  <input type="hidden" #selection>
-
-  <div class="card-container">
-    <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-      </svg>
-
-      <span>New Component</span>
-    </div>
-
-    <div class="card card-small" (click)="selection.value = 'material'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-      </svg>
-
-      <span>Angular Material</span>
-    </div>
-
-    <div class="card card-small" (click)="selection.value = 'pwa'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-      </svg>
-
-      <span>Add PWA Support</span>
-    </div>
-
-    <div class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-      </svg>
-
-      <span>Add Dependency</span>
-    </div>
-
-    <div class="card card-small" (click)="selection.value = 'test'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-      </svg>
-
-      <span>Run and Watch Tests</span>
-    </div>
-
-    <div class="card card-small" (click)="selection.value = 'build'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-      </svg>
-
-      <span>Build for Production</span>
-    </div>
-  </div>
 </div>
 
 <footer>
@@ -89,8 +36,6 @@
       <div class="right_side">
         <span class="copy">© 2021 Luz del Alba™. All Rights Reserved.<br>Luz del Alba™ is a trademark.</span>
       </div>
-
     </div>
-
   </div>
 </footer>
