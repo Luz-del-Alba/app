@@ -12,22 +12,28 @@
 
   <br>
   <mat-toolbar color="accent" style="background-color: #1c2135;">
-    &nbsp; Get a Quote
+    &nbsp; Luz del Alba™
     <span class="example-spacer"></span>
-    <button mat-flat-button color="basic">
-      <mat-icon>mode_edit</mat-icon>
-    </button>
+
     &nbsp; &nbsp;
   </mat-toolbar>
-  <br><br>
-  <mat-list>
-    <mat-list-item>Item 1</mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Item 2</mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Item 3</mat-list-item>
-  </mat-list>
-
+  <div class="row">
+    <div class="column left">
+      <mat-list>
+        <mat-list-item>
+          <mat-icon>grid_view</mat-icon>
+          &nbsp; Dashboard
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Item 2</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Item 3</mat-list-item>
+      </mat-list>
+    </div>
+    <div class="column right">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
 
 <footer>

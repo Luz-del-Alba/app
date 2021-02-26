@@ -35,7 +35,7 @@ p {
   max-width: 1160px;
   min-height: 680px;
   flex-direction: column;
- }
+}
 
 a,
 a:visited,
@@ -65,4 +65,32 @@ footer a {
 
 .example-spacer {
   flex: 1 1 auto;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  /*float: left;*/
+  /*padding: 10px;*/
+  /*height: 300px; !* Should be removed. Only for demonstration *!*/
+}
+
+.left {
+  width: 20%;
+  height: 500px;
+}
+
+.right {
+  width: 85%;
+  height: 500px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
