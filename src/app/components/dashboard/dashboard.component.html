@@ -14,21 +14,21 @@
         <ul class="statuses">
           <li class="quote_detail" *ngFor="let module of modulesAvailables">
             <span class="heading">{{module._id}}</span>
-            <a (click)="select(module)" title="Get a Quote" style="color: #125699; cursor: pointer;"> Details</a>
+            <a (click)="select(module)" title="Details" style="color: #125699; cursor: pointer;"> Details</a>
           </li>
         </ul>
       </li>
       <div style="align-items: center;margin-top: 30px; margin-right: 30px;" *ngIf="selectedModule">
-        <mat-tab-group>
+        <mat-tab-group animationDuration="0ms">
           <mat-tab *ngFor="let detail of selectedModule.details" label="{{ detail.description }}">
             <mat-list>
               <div mat-subheader>Details</div>
-              <mat-list-item >
+              <mat-list-item>
                 <mat-icon mat-list-icon>attach_money</mat-icon>
                 <div mat-line>Minimum</div>
                 <div mat-line> {{ detail.min }} </div>
               </mat-list-item>
-              <mat-list-item >
+              <mat-list-item>
                 <mat-icon mat-list-icon>attach_money</mat-icon>
                 <div mat-line>Maximum</div>
                 <div mat-line> {{ detail.max }} </div>
@@ -36,6 +36,8 @@
             </mat-list>
           </mat-tab>
         </mat-tab-group>
+        <a mat-flat-button color="accent" [routerLink]="['/evaluation']" [state]="selectedModule" routerLinkActive="active" title="Get a Quote" class="get_a_quote"> Get a Quote </a>
+         &nbsp;
       </div>
     </ul>
   </section>

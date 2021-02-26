@@ -1,0 +1,58 @@
+<div class="content">
+
+  <section class="title_section">
+    <h2>Quotes</h2>
+  </section>
+
+  <section class="welcome_container">
+    <div class="head"></div>
+    <ul class="get_started_content">
+      <li class="quote_status" style="display: block;">
+        <ul class="statuses">
+          <li class="quote_detail">
+            <span class="heading">{{selectedModule._id}}</span>
+          </li>
+        </ul>
+      </li>
+      <div style="align-items: center;margin-top: 30px; margin-right: 30px;">
+        <mat-vertical-stepper [linear]="true" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Fill out your name</ng-template>
+              <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Last name, First name" formControlName="name" required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Please provide the date</ng-template>
+              <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input matInput formControlName="date" type="date" placeholder="2000-01-01"
+                       required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+        </mat-vertical-stepper>
+      </div>
+    </ul>
+  </section>
+
+</div>

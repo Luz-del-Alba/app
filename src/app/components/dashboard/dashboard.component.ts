@@ -10,7 +10,6 @@ export class DashboardComponent implements OnInit {
   private dashboardService: DashboardService;
   public modulesAvailables: any[] = [];
   public selectedModule: any = undefined;
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 
   constructor(dashboardService: DashboardService) {
     this.dashboardService = dashboardService;
