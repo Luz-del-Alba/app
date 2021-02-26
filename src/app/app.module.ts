@@ -14,6 +14,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
+import {HttpClientModule} from "@angular/common/http";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -22,6 +26,7 @@ import {MatListModule} from '@angular/material/list';
     DashboardComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     MatSliderModule,
@@ -32,7 +37,10 @@ import {MatListModule} from '@angular/material/list';
     MatToolbarModule,
     MatButtonModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
