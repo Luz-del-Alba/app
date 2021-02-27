@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './components/home';
 import {DashboardComponent} from './components/dashboard';
 import {EvaluationComponent} from './components/evaluation';
+import {UserComponent} from "./components/user";
 import {MatSliderModule} from '@angular/material/slider';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSidenavModule} from "@angular/material/sidenav";
@@ -23,13 +24,16 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from '@angular/material/input';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboardComponent,
-    EvaluationComponent
+    EvaluationComponent,
+    UserComponent
   ],
   imports: [
     HttpClientModule,
@@ -50,7 +54,9 @@ import {MatInputModule} from '@angular/material/input';
     MatStepperModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

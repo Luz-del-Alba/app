@@ -60,10 +60,11 @@
             <br>
             <div>
               <button mat-button matStepperPrevious>Back</button>
-              <button mat-button (click)="buy()">Buy</button>
+              <button mat-button matStepperNext (click)="buy()">Buy</button>
             </div>
           </mat-step>
           <mat-step>
+            <br>
             <ng-template matStepLabel>Done</ng-template>
             <p>You are now done.</p>
             <div>

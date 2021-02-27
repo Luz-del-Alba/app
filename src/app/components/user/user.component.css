@@ -1,0 +1,112 @@
+.content .welcome_container {
+  display: block;
+  width: 100%;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 7px 14px 0 rgb(60 66 87 / 10%), 0 3px 6px 0 rgb(0 0 0 / 10%);
+  overflow: hidden;
+}
+
+.head {
+  padding: 20px 25px;
+  background: #586382 url(../../../assets/illustration_pipeliens.svg);
+  background-size: 1200px;
+  background-position: right;
+  color: #fff;
+}
+
+.content {
+  margin: 0px auto 32px;
+}
+
+.content .welcome_container ul.get_started_content > li:first-of-type {
+  box-shadow: none;
+  height: auto;
+}
+
+.content .welcome_container ul.get_started_content > li.quote_status ul.statuses {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.content .welcome_container ul.get_started_content > li.quote_status ul.statuses > li {
+  display: inline-block;
+  width: 144px;
+  position: relative;
+  top: 1px;
+  margin: 0 13px;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.12) 0px 2px 5px 0px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.content .welcome_container ul.get_started_content > li.quote_status ul.statuses > li:first-of-type {
+  margin-left: 0;
+}
+
+.content .welcome_container ul.get_started_content > li.quote_status ul.statuses > li:last-of-type {
+  margin-right: 0;
+}
+
+.content .welcome_container ul.get_started_content > li.quote_status ul.statuses > li > span.heading {
+  display: block;
+  font-weight: 600;
+  position: relative;
+  font-size: 13px;
+  padding: 6px 8px 6px 8px;
+}
+
+.content .welcome_container ul.get_started_content > li.quote_status ul.statuses > li > span.heading:before {
+  content: '';
+  padding: 3px 5px;
+  font-weight: 600;
+  top: 5px;
+  position: relative;
+  display: block;
+  background: url(../../../assets/icon_draft.svg);
+  width: 20px;
+  height: 20px;
+  background-size: 20px !important;
+  background-position: center !important;
+  margin: 0 auto;
+  margin-bottom: 11px;
+}
+
+
+.content .welcome_container ul.get_started_content > li.quote_status ul.statuses > li.quote_detail > span.heading:before {
+  background: url(../../../assets/icon_draft.svg);
+}
+
+.get_a_quote {
+  background-color: #1c2135;
+  cursor: pointer;
+  float: right;
+  margin-top: -100px;
+  margin-right: 50px;
+}
+
+.mat-stepper-vertical {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+.estimate {
+  font-size: 55px;
+  line-height: 75px;
+  font-weight: 700;
+}
+
+.estimate > .span {
+  font-size: 15px;
+  line-height: 22.5px;
+}
+
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
