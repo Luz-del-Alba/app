@@ -8,7 +8,7 @@ import {first} from "rxjs/operators";
 })
 export class UserComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'names', 'email', 'policies',];
+  displayedColumns: string[] = ['id', 'names', 'email', 'policies'];
   dataSource: any
 
   private userService: UserService;
